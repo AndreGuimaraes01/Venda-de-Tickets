@@ -1,8 +1,8 @@
-# 🎟️ Venda de Tickets
+# Venda de Tickets
 
 Plataforma de venda de ingressos construída em **C# / .NET**, com foco em **concorrência, alta disponibilidade e boas práticas de DevOps**.
 
-> 🚧 **Projeto em desenvolvimento.** Estou construindo do zero e documentando cada etapa do aprendizado.
+> **Projeto em desenvolvimento.** Estou construindo do zero e documentando cada etapa do aprendizado.
 
 ## O problema
 
@@ -27,14 +27,14 @@ Resolver esses três pontos é o objetivo central do projeto.
 
 | Camada | Tecnologia | Status |
 |---|---|---|
-| API | C# / ASP.NET Core (.NET 10) | ✅ Em uso |
-| Controle de versão | Git + GitHub | ✅ Em uso |
-| Banco de dados | PostgreSQL | 🔜 Planejado |
-| Cache | Redis | 🔜 Planejado |
-| Containers | Docker / Docker Compose | 🔜 Planejado |
-| CI/CD | GitHub Actions | 🔜 Planejado |
-| Infraestrutura como código | Terraform | 🔜 Planejado |
-| Monitoramento | Prometheus + Grafana | 🔜 Planejado |
+| API | C# / ASP.NET Core (.NET 10) | Em uso |
+| Controle de versão | Git + GitHub | Em uso |
+| Banco de dados | PostgreSQL | Planejado |
+| Cache | Redis | Planejado |
+| Containers | Docker / Docker Compose | Planejado |
+| CI/CD | GitHub Actions | Planejado |
+| Infraestrutura como código | Terraform | Planejado |
+| Monitoramento | Prometheus + Grafana | Planejado |
 
 ## Roadmap
 
@@ -78,6 +78,6 @@ Venda-de-Tickets/
 
 ## Autor
 
-**André Guimarães**, estudante de Ciência da Computação.
+**André Guimarães**
 
 [GitHub](https://github.com/AndreGuimaraes01)

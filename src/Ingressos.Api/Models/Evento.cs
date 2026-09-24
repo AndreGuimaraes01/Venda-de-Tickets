@@ -1,10 +1,11 @@
-using Microsoft.Extensions.ObjectPool;
-
 namespace Ingressos.Api.Models;
 
 public class Evento
 {
-    public int IdDaEmpresa { get; set; }
+    public int IdDaEmpresa { get; set;}
+    public int IdDoEvento { get; set;}
+
+    public string NomeDoEvento { get; set;} = string.Empty;
 
     public bool EstadoEvento { get; set;}    
     public int IngressosDisponiveis { get; private set; }
@@ -15,16 +16,20 @@ public class Evento
 
     public string LocalizacaoDoEvento { get; set;} = string.Empty;
 
-    public string NomeEmpresaDoEvento { get; set;} = string.Empty;
-
-    public bool PodeVender()
+    public bool PodeVender(DateTime agora)
     {
+
         if (!EstadoEvento)
         {
-            return false; // loja fechada: não vende
+            return false; // evento fechado não vende
         }
 
         if (IngressosDisponiveis == 0)
+        {
+            return false;
+        }
+
+        if (agora > LimiteParaComprar)
         {
             return false;
         }
