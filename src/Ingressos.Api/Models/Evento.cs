@@ -16,6 +16,13 @@ public class Evento
 
     public string LocalizacaoDoEvento { get; set;} = string.Empty;
 
+    public Evento(int QuantidadeInicial) // As quantiades iniciais de ingressos, recebe o numero que chega do new
+    {                                    //isso é um construtor(Evento)   
+        IngressosDisponiveis = QuantidadeInicial;
+        
+    }
+    
+
     public bool PodeVender(DateTime agora)
     {
 
