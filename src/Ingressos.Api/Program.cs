@@ -2,9 +2,13 @@ using Ingressos.Api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// var CriarEvento = new Evento(100); // Isso manda a quantiade para o construtor, temporariamente
-// Console.WriteLine(CriarEvento.IngressosDisponiveis); // Pega os dados da propriedade IngressosDisponiveis
-
+var show = new Evento(100); // Isso manda a quantiade para o construtor, temporariamente
+show.EstadoEvento = true;
+show.LimiteParaComprar = new DateTime(2026, 11, 06);
+show.VenderIngresso(DateTime.UtcNow);
+Console.WriteLine(show.IngressosDisponiveis); // Pega os dados da propriedade IngressosDisponiveis
+Console.WriteLine(show.LimiteParaComprar);
+Console.WriteLine(show.EstadoEvento);
 // Add services to the container.
 
 builder.Services.AddControllers();

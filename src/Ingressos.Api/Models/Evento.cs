@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Razor.TagHelpers;
+
 namespace Ingressos.Api.Models;
 
 public class Evento
@@ -22,6 +24,21 @@ public class Evento
         
     }
     
+    public bool VenderIngresso(DateTime agora)
+    {
+        if (PodeVender (agora))
+        {
+            IngressosDisponiveis = IngressosDisponiveis - 1;
+
+            return true;
+        }
+
+        else
+        {
+            return false;
+        }
+    }
+
 
     public bool PodeVender(DateTime agora)
     {
