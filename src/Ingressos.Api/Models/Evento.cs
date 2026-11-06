@@ -9,7 +9,7 @@ public class Evento
 
     public string NomeDoEvento { get; set;} = string.Empty;
 
-    public bool EstadoEvento { get; set;}    
+    public bool EventoAtivo { get; private set;}    
     public int IngressosDisponiveis { get; private set; }
 
     public DateTime DataInicioUtc { get; set; } // Usar o horário universal e converter para o horário de brasília 
@@ -18,10 +18,14 @@ public class Evento
 
     public string LocalizacaoDoEvento { get; set;} = string.Empty;
 
+    public bool EventoAcabou { get; set;}
+
+    public bool EventoCancelado { get; private set;}
+
     public Evento(int QuantidadeInicial) // As quantiades iniciais de ingressos, recebe o numero que chega do new
     {                                    //isso é um construtor(Evento)   
         IngressosDisponiveis = QuantidadeInicial;
-        
+        EventoAtivo = true;
     }
     
     public bool VenderIngresso(DateTime agora)
@@ -43,7 +47,7 @@ public class Evento
     public bool PodeVender(DateTime agora)
     {
 
-        if (!EstadoEvento)
+        if (!EventoAtivo)
         {
             return false; // evento fechado não vende
         }
@@ -61,6 +65,11 @@ public class Evento
         return true;
     }
 
+    public void CancelarEvento()
+    {
+        EventoAtivo = false;
+        EventoCancelado = true;
+    }
 
 }
 
